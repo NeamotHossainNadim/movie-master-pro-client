@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useState } from "react";
-import { Menu, X } from "lucide-react"; // for better icons
+import { Menu, X } from "lucide-react"; 
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -82,15 +82,15 @@ const Navbar = () => {
   return (
     <nav className="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-3 flex justify-between items-center">
-        {/* === Logo === */}
+        
         <Link
           to="/"
           className="text-2xl md:text-3xl font-extrabold text-indigo-600 flex items-center gap-1"
         >
-          🎬 <span className="hidden sm:inline">MovieMaster</span>
+         <span className="hidden sm:inline">MovieMaster</span>
         </Link>
 
-        {/* === Desktop Menu === */}
+        
         <div className="hidden md:flex items-center space-x-6">
           {navLinks}
 
@@ -126,7 +126,7 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* === Mobile Menu Toggle === */}
+        
         <button
           className="md:hidden text-gray-700 dark:text-gray-200 focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -135,7 +135,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* === Mobile Dropdown === */}
+      
       {menuOpen && (
         <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-md px-4 py-4 space-y-3 transition-all">
           {navLinks}
