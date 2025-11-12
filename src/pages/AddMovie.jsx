@@ -47,10 +47,8 @@ const AddMovie = () => {
   try {
     setLoading(true);
 
-   
     const idToken = await user.getIdToken();
 
-    
     await api.post("/movies", newMovie, {
       headers: {
         Authorization: `Bearer ${idToken}`,
