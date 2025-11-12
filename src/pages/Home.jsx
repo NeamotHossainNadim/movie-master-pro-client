@@ -10,7 +10,6 @@ const Home = () => {
     const fetchMovies = async () => {
       try {
         const res = await api.get("/movies");
-        // show only latest 6 movies
         setMovies(res.data.slice(-6).reverse());
       } catch (error) {
         console.error("Failed to load movies:", error);
@@ -21,10 +20,10 @@ const Home = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      {/* ===== Hero Section ===== */}
+      
       <section className="text-center py-16 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          Welcome to MovieMaster Pro 🎬
+          Welcome to MovieMaster Pro
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto opacity-90">
           Browse, manage, and organize your favorite movies effortlessly.
@@ -37,7 +36,6 @@ const Home = () => {
         </button>
       </section>
 
-      {/* ===== Movies Section ===== */}
       <section className="max-w-7xl mx-auto px-6 py-12">
         <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
           Latest Movies
@@ -65,7 +63,7 @@ const Home = () => {
                   <p className="text-sm text-gray-500 mb-2">{movie.genre}</p>
 
                   <div className="flex justify-between items-center text-sm text-gray-600">
-                    <span>⭐ {movie.rating || "N/A"}</span>
+                    <span> {movie.rating || "N/A"}</span>
                     <span>{movie.releaseYear}</span>
                   </div>
 
