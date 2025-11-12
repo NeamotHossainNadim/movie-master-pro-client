@@ -46,7 +46,7 @@ const Movies = () => {
       
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
         <h1 className="text-3xl font-extrabold text-gray-800 dark:text-gray-100">
-          🎥 All Movies
+           All Movies
         </h1>
 
         <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">

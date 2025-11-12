@@ -107,7 +107,6 @@ const MovieDetails = () => {
               Added by: {movie.addedBy?.displayName || "Unknown"}
             </p>
 
-        
             <div className="mt-8 flex flex-wrap gap-4">
               {user && user.email === movie.addedBy?.email && (
                 <Link
