@@ -16,7 +16,6 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // 🔐 Listen for token changes and store ID token
   useEffect(() => {
     const unsubscribe = onIdTokenChanged(auth, async (currentUser) => {
       if (currentUser) {
@@ -32,7 +31,6 @@ const AuthProvider = ({ children }) => {
     return unsubscribe;
   }, []);
 
-  // 🧾 Register user
   const register = async (name, email, password, photoURL) => {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     await updateProfile(res.user, { displayName: name, photoURL });
@@ -40,21 +38,18 @@ const AuthProvider = ({ children }) => {
     localStorage.setItem("token", token);
   };
 
-  // 🔑 Email login
   const login = async (email, password) => {
     const res = await signInWithEmailAndPassword(auth, email, password);
     const token = await res.user.getIdToken();
     localStorage.setItem("token", token);
   };
 
-  // 🟢 Google login
   const googleLogin = async () => {
     const res = await signInWithPopup(auth, googleProvider);
     const token = await res.user.getIdToken();
     localStorage.setItem("token", token);
   };
 
-  // 🚪 Logout
   const logout = async () => {
     await signOut(auth);
     localStorage.removeItem("token");
