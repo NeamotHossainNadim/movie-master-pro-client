@@ -21,7 +21,6 @@ const Movies = () => {
     fetchMovies();
   }, []);
 
-  // Handle search
   useEffect(() => {
     let results = [...movies];
 
@@ -44,13 +43,12 @@ const Movies = () => {
 
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
-      {/* Header */}
+      
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
         <h1 className="text-3xl font-extrabold text-gray-800 dark:text-gray-100">
           🎥 All Movies
         </h1>
 
-        {/* Controls */}
         <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
           <input
             type="text"
@@ -72,7 +70,7 @@ const Movies = () => {
         </div>
       </div>
 
-      {/* Movie Grid */}
+
       {filteredMovies.length > 0 ? (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
           {filteredMovies.map((movie) => (
