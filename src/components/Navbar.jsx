@@ -125,7 +125,6 @@ const Navbar = () => {
           )}
         </div>
 
-        
         <button
           className="md:hidden text-gray-700 dark:text-gray-200 focus:outline-none"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -134,7 +133,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      
+
       {menuOpen && (
         <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-md px-4 py-4 space-y-3 transition-all">
           {navLinks}
