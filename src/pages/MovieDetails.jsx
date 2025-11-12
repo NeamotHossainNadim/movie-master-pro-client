@@ -34,9 +34,9 @@ const MovieDetails = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-200 py-10 px-4">
-      {/* Card container */}
+      
       <div className="max-w-6xl mx-auto bg-white shadow-2xl rounded-2xl overflow-hidden">
-        {/* Header section */}
+        
         <div className="relative">
           <img
             src={movie.posterUrl}
@@ -49,9 +49,8 @@ const MovieDetails = () => {
           </h1>
         </div>
 
-        {/* Content section */}
         <div className="p-6 md:p-10 grid md:grid-cols-2 gap-8">
-          {/* Poster (mobile hidden, shown on desktop) */}
+          
           <div className="hidden md:block">
             <img
               src={movie.posterUrl}
@@ -60,7 +59,6 @@ const MovieDetails = () => {
             />
           </div>
 
-          {/* Movie info */}
           <div>
             <h2 className="text-2xl font-semibold text-indigo-700 mb-4">
               Movie Details
@@ -91,7 +89,7 @@ const MovieDetails = () => {
               <li>
                 <strong>Rating:</strong>{" "}
                 <span className="text-yellow-500 font-semibold">
-                  ⭐ {movie.rating || "N/A"}/10
+                   {movie.rating || "N/A"}/10
                 </span>
               </li>
             </ul>
@@ -109,14 +107,14 @@ const MovieDetails = () => {
               Added by: {movie.addedBy?.displayName || "Unknown"}
             </p>
 
-            {/* Action buttons */}
+        
             <div className="mt-8 flex flex-wrap gap-4">
               {user && user.email === movie.addedBy?.email && (
                 <Link
                   to={`/movies/update/${movie._id}`}
                   className="bg-indigo-600 text-white px-5 py-2 rounded-lg shadow hover:bg-indigo-700 transition"
                 >
-                  ✏️ Edit Movie
+                   Edit Movie
                 </Link>
               )}
 
