@@ -90,7 +90,6 @@ const Navbar = () => {
          <span className="hidden sm:inline">MovieMaster</span>
         </Link>
 
-        
         <div className="hidden md:flex items-center space-x-6">
           {navLinks}
 
